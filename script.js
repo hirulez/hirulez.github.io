@@ -90,7 +90,7 @@ function addMarkers(coords) {
     const m = L.marker([lat, lon])
       .addTo(map)
       .bindPopup(
-        `${lat},${lon} - <a href="https://google.com/maps/search/${lat},${lon}" target="_blank">Google Maps</a>`
+        `${lat},${lon} - <a href="https://www.google.com/maps/search/${lat},${lon}/@${lat},${lon},12z" target="_blank">Google Maps</a>`
       );
     markers.push(m);
   });
