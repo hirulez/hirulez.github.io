@@ -89,7 +89,9 @@ function addMarkers(coords) {
   coords.forEach(([lat, lon]) => {
     const m = L.marker([lat, lon])
       .addTo(map)
-      .bindPopup(`Lat: ${lat}, Lon: ${lon}`);
+      .bindPopup(
+        `${lat},${lon} - <a href="https://google.com/maps/search/${lat},${lon}" target="_blank">Google Maps</a>`
+      );
     markers.push(m);
   });
   if (markers.length) {
