@@ -29,7 +29,23 @@
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
       display: flex;
+      flex-direction: column;
       gap: 6px;
+      align-items: flex-start;
+    }
+
+    #inputContainer {
+      display: flex;
+      gap: 6px;
+    }
+
+    .checkbox {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      user-select: none;
+      cursor: pointer;
     }
 
     #dateInput {
@@ -63,8 +79,14 @@
   <div id="map"></div>
 
   <div id="controls">
-    <input type="text" id="dateInput" placeholder="DD.MM.YYYY, DD.MM.YYYY" />
-    <button id="generateButton">Generate</button>
+    <div id="inputContainer">
+        <input type="text" id="dateInput" placeholder="DD.MM.YYYY, DD.MM.YYYY" />
+        <button id="generateButton">Generate</button>
+    </div>
+    <div class="checkbox">
+        <input type="checkbox" id="reverse" />
+        <label for="reverse">Reverse coords</label>
+    </div>
   </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>

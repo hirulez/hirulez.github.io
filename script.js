@@ -100,9 +100,22 @@ function addMarkers(coords) {
   }
 }
 
+function reverseString(str) {
+  // Step 1: Split the string into an array of characters.
+  const charArray = str.split("");
+
+  // Step 2: Reverse the order of elements in the array.
+  const reversedArray = charArray.reverse();
+
+  // Step 3: Join the elements of the reversed array back into a string.
+  const reversedStr = reversedArray.join("");
+
+  return reversedStr;
+}
+
 document.getElementById("generateButton").addEventListener("click", () => {
   const raw = document.getElementById("dateInput").value.trim();
-  const parts = raw
+  let parts = raw
     .split(",")
     .map((s) => s.trim())
     .filter(Boolean);
@@ -111,6 +124,11 @@ document.getElementById("generateButton").addEventListener("click", () => {
       "Введите две даты в формате: DD.MM.YYYY, DD.MM.YYYY (год может быть 2-4 цифры)"
     );
     return;
+  }
+
+  const reverse = document.getElementById("reverse").checked;
+  if (reverse) {
+    parts = parts.map(reverseString);
   }
 
   clearMarkers();
